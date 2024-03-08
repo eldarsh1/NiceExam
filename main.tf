@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Change to your desired region
+  region = "us-west-2"  # Change to your desired region
 }
 
 resource "aws_vpc" "my_vpc" {
