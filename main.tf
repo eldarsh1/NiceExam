@@ -51,7 +51,7 @@ resource "aws_instance" "my_instance" {
   }
 
   provisioner "file" {
-    source      = "path/to/hello_world.html"
+    source      = "./hello_world.html"
     destination = "/var/www/html/index.html"
   }
 }
