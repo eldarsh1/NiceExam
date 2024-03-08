@@ -3,7 +3,7 @@
 Deployment Instructions:
 Clone the Repository:
 
-git clone <repository_url>
+git clone git@github.com:eldarsh1/NiceExam.git
 cd <repository_directory>
 Modify Variables:
 Edit the main.tf file to update the following variables:
@@ -13,24 +13,20 @@ Change "your-key-pair" to your EC2 key pair name.
 Ensure the source path in the provisioner block points to the correct location of your "hello_world.html" file.
 Initialize Terraform:
 
-bash
-Copy code
 terraform init
+#######################Deployment#######################
 Deploy Infrastructure:
 
-bash
-Copy code
 terraform apply
 Terraform will prompt you to confirm the changes. Type yes and press Enter.
 
 Access the Deployed Website:
 Once the deployment is complete, note the public IP address from the Terraform output. Open a web browser and visit http://<public_ip> to see the "Hello, World!" webpage.
 
-Teardown Instructions:
+#####################Teardown Instructions:###########################
 Destroy Infrastructure:
 
-bash
-Copy code
+
 terraform destroy
 Terraform will prompt you to confirm the destruction of resources. Type yes and press Enter.
 
@@ -39,8 +35,7 @@ Terraform will show a summary of resources to be destroyed. Type yes and press E
 
 Cleanup Local Files:
 
-bash
-Copy code
+
 rm -rf .terraform
 rm -f terraform.tfstate*
 This step removes Terraform state files and configuration files from your local directory.
