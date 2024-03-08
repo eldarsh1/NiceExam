@@ -1,0 +1,74 @@
+CI/CD Pipeline Setup Documentation
+1. Connect Your Code Repository to Jenkins:
+a. Install Jenkins:
+- Follow the official Jenkins installation guide for your operating system: Jenkins Installation
+
+b. Start Jenkins:
+- Start the Jenkins service after installation.
+
+c. Access Jenkins Web Interface:
+- Open a web browser and navigate to http://localhost:8080 (or the address where Jenkins is hosted).
+
+d. Unlock Jenkins:
+- Retrieve the initial admin password from the Jenkins installation directory and follow the setup wizard to unlock Jenkins.
+
+e. Install Recommended Plugins:
+- During the setup, select the option to install recommended plugins.
+
+f. Create Admin User:
+- Create an admin user and complete the Jenkins setup.
+
+g. Access Jenkins Dashboard:
+- Log in with the admin credentials and access the Jenkins dashboard.
+
+h. Install Additional Plugins:
+- Install the necessary plugins such as Git and GitHub.
+
+i. Configure Global Tools:
+- Configure Git in the Jenkins Global Tool Configuration.
+
+2. Create Jenkins Job for CI/CD:
+a. Create a New Jenkins Job:
+- Click on "New Item" on the Jenkins dashboard.
+- Enter a name for the job (e.g., "Website_CI_CD") and select "Freestyle project."
+
+b. Configure Source Code Management:
+- Choose Git as the source code management system.
+- Enter the repository URL and credentials if needed.
+
+c. Set Up Build Triggers:
+- Configure build triggers, e.g., "Poll SCM" to check for changes.
+
+d. Configure Build Steps:
+- Add a build step to build your static website (e.g., use a build script or command).
+
+e. Add Post-Build Actions:
+- Add post-build actions, such as archiving artifacts.
+
+3. Configure Deployment:
+a. Add Deployment Steps:
+- Add deployment steps in the Jenkins job (e.g., use a script to copy artifacts to the server).
+
+b. Use Credentials:
+- If deploying to a remote server, use Jenkins Credentials to securely store deployment credentials.
+
+c. Test Deployment:
+- Manually trigger the Jenkins job to test the deployment steps.
+
+4. Integrate with GitHub:
+a. Create a Webhook:
+- In your GitHub repository, go to "Settings" > "Webhooks" > "Add webhook."
+- Set the Payload URL to your Jenkins server's URL with /github-webhook/ appended.
+
+b. Install GitHub Plugin:
+- Install the GitHub plugin in Jenkins.
+
+c. Configure GitHub in Jenkins:
+- In Jenkins, go to "Manage Jenkins" > "Configure System" and configure GitHub settings.
+
+d. Enable GitHub Integration:
+- In the Jenkins job configuration, enable GitHub integration and configure the necessary settings.
+
+5. Documentation:
+a. README.md:
+- Update your project's README.md file with information on the CI/CD pipeline, including how to trigger a manual build and deploy.
