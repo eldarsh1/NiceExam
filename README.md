@@ -4,7 +4,9 @@ Deployment Instructions:
 Clone the Repository:
 
 git clone git@github.com:eldarsh1/NiceExam.git
+
 cd <repository_directory>
+
 Modify Variables:
 Edit the main.tf file to update the following variables:
 
