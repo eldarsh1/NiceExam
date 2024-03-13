@@ -81,7 +81,7 @@ resource "aws_security_group" "my_sg" {
 resource "aws_instance" "my_instance" {
   ami             = "ami-07bff6261f14c3a45"
   instance_type   = "t2.micro"
-  key_name        = "devops-eldar"
+  key_name        = "devops-eldare"
   subnet_id       = aws_subnet.my_subnet.id
   security_groups  = [aws_security_group.my_sg.id]
   tags = {
