@@ -3,11 +3,11 @@ pipeline {
 
     stages {
         stage('Clone Repository') {
+            stage('Clone repository') {
             steps {
-                script {
-                    git 'https://github.com/eldarsh1/NiceExam.git'
-                }
+                git branch: 'main', credentialsId: 'your-github-credentials-id', url: 'https://github.com/eldarsh1/NiceExam.git'
             }
+        }
         }
 
         stage('Deploy Terraform to AWS') {
