@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        david = 'aws-credentials-id'  // Update with your AWS credentials ID in Jenkins
+        AWS_CREDENTIALS_ID = 'aws-credentials-id'  // Update with your AWS credentials ID in Jenkins
         AWS_REGION         = 'us-west-2'  // Update with your desired AWS region
     }
 
