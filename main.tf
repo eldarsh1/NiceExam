@@ -94,7 +94,7 @@ resource "aws_instance" "my_instance" {
     connection {
       type        = "ssh"
       user        = "ec2-user"  # Replace with the appropriate user for your AMI
-      private_key = file("./devops-eldar.pem")  # Replace with the path to your private key
+      private_key = file("./devops-eldare.pem")  # Replace with the path to your private key
       host        = aws_instance.my_instance.public_ip  # Replace with your instance's public IP or DNS
     }
   }
@@ -111,7 +111,7 @@ resource "aws_instance" "my_instance" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("./devops-eldar.pem")
+      private_key = file("./devops-eldare.pem")
       host        = aws_instance.my_instance.public_ip
     }
   }
