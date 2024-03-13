@@ -2,19 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone repository') {
+        stage('Clone Repository') {
             steps {
-                git branch: 'main', credentialsId: 'your-github-credentials-id', url: 'https://github.com/eldarsh1/NiceExam.git'
+                script {
+                    git 'https://github.com/eldarsh1/NiceExam.git'
+                }
             }
         }
-        stage('Deploy to AWS') {
+
+        stage('Deploy Terraform to AWS') {
             steps {
-                sh 'aws configure' // Configure AWS credentials
-                sh 'terraform init' // Initialize Terraform
-                sh 'terraform plan' // Run Terraform plan
-                // Manually approve or reject the plan
-                input 'Approve Plan?'
-                sh 'terraform apply' // Apply Terraform if plan is approved
+                script {
+                    // Fetch AWS credentials from Jenkins credentials
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY', credentialsId: 'aws-credentials-id']]) {
+                        // Change to the Terraform directory
+                        dir('path/to/terraform/module') {
+                            // Initialize and apply Terraform
+                            sh 'terraform init'
+                            sh 'terraform apply -auto-approve'
+                        }
+                    }
+                }
             }
         }
     }
