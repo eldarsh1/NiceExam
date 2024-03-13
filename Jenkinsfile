@@ -8,7 +8,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'your-github-credentials-id', url: 'https://github.com/eldarsh1/NiceExam.git'
             }
         }
-        }
+    }
 
         stage('Deploy Terraform to AWS') {
             steps {
