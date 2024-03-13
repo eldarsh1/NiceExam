@@ -1,1 +1,1 @@
-{"bucket": "itero-dev-eaas-tfstate", "region": "us-west-2", "key": "devops01/us-west-2/caasr/state_file", "dynamodb_table": "itero-dev-eaas-tfstate-db"}
+{"bucket": "niceexam-eldar", "region": "us-west-2", "key": "devops01/terraform.tfstate"}
