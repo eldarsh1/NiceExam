@@ -30,12 +30,11 @@ pipeline {
                         // Set Terraform environment variables
                         env.TF_VAR_aws_access_key = env.AWS_ACCESS_KEY_ID
                         env.TF_VAR_aws_secret_key = env.AWS_SECRET_ACCESS_KEY
+                    def terraformPath = '/usr/local/bin/terraform'
 
                         // Initialize Terraform
-                        sh 'terraform init'
-
-                        // Apply Terraform changes
-                        sh 'terraform apply -auto-approve'
+                    sh "${terraformPath} init"
+                    sh "${terraformPath} apply -auto-approve"
                     }
                 }
             }
