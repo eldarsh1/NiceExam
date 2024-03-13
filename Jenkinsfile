@@ -34,7 +34,7 @@ pipeline {
 
                         // Initialize Terraform
                     sh "${terraformPath} init"
-                    sh "${terraformPath} destroy -auto-approve"
+                    sh "${terraformPath} apply -auto-approve"
                     }
                 }
             }
