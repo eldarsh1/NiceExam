@@ -1,1 +1,1 @@
-{"bucket": "nice-exam", "region": "us-west-2", "key": "niceexam/us-west-2/nice/state_file", "dynamodb_table": "niceexam-db"}
+{"bucket": "itero-dev-eaas-tfstate", "region": "us-west-2", "key": "devops01/us-west-2/caasr/state_file", "dynamodb_table": "itero-dev-eaas-tfstate-db"}
