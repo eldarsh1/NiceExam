@@ -33,7 +33,7 @@ pipeline {
                     def terraformPath = '/usr/local/bin/terraform'
 
                         // Initialize Terraform
-                    sh "${terraformPath} init"
+                    sh "${terraformPath} init -backend=true -backend-config=./backend.json"
                     sh "${terraformPath} apply -auto-approve"
                     }
                 }
