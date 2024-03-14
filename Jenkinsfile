@@ -34,7 +34,7 @@ pipeline {
 
                         // Initialize Terraform
                     sh "${terraformPath} init -backend=true -backend-config=./backend.json"
-                    sh "${terraformPath} destroy -auto-approve"
+                    sh "${terraformPath} apply -auto-approve"
                     }
                 }
             }
